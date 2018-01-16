@@ -32,7 +32,7 @@ func HelloLambdaHandler(ctx context.Context, config events.ConfigEvent) (string,
 	log.Printf("config version is %v\n", config.Version)
 
 	// https://docs.aws.amazon.com/lambda/latest/dg/go-programming-model-env-variables.html
-	log.Printf("\"%s\" executes on \"%s\".\n", os.Getenv("NAME"), os.Getenv("AWS_EXECUTION_ENV"))
+	log.Printf("\"%s\" executes on \"%s\".\n", os.Getenv("LAMBDA_TASK_ROOT"), os.Getenv("AWS_EXECUTION_ENV"))
 
 	return "function finished", nil
 }
